@@ -1,0 +1,29 @@
+<%= form_for(@fundraiser) do |f| %>
+  <% if @fundraiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundraiser.errors.count, "error") %> prohibited this fundraiser from being saved:</h2>
+
+      <ul>
+      <% @fundraiser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>  
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div>Welcome Akwaaba</div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
